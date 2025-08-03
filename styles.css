@@ -1,0 +1,389 @@
+:root {
+  --primary-color: #1e3a8a;
+  --secondary-color: #2563eb;
+  --accent-color: #10b981;
+  --danger-color: #ef4444;
+  --gray-color: #6b7280;
+  --light-bg: #f9fafb;
+  --dark-bg: #1f2937;
+  --light-text: #f1f5f9;
+  --dark-text: #111827;
+}
+
+/* 🔒 Global Styles */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: var(--light-bg);
+  color: var(--dark-text);
+  line-height: 1.5;
+  font-size: 14px;
+}
+
+/* 🔐 Login Page */
+.login-wrapper {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(to right, #3b82f6, #6366f1);
+}
+
+.login-card {
+  background: #ffffff;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.login-card h2 {
+  margin-bottom: 10px;
+  color: #1f2937;
+  text-align: center;
+}
+
+.login-card input {
+  padding: 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.login-card button {
+  background: var(--primary-color);
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.login-card button:hover {
+  background: #1e40af;
+}
+
+/* ⚙️ Layout */
+.layout {
+  display: flex;
+  min-height: 100vh;
+  transition: all 0.3s ease-in-out;
+}
+
+.sidebar {
+  width: 220px;
+  background: var(--primary-color);
+  color: white;
+  padding: 24px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  min-height: 100vh;
+  transition: all 0.3s ease-in-out;
+}
+
+.sidebar h2 {
+  margin-bottom: 20px;
+  font-size: 20px;
+}
+
+.sidebar button {
+  background: var(--secondary-color);
+  color: white;
+  border: none;
+  padding: 10px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  text-align: left;
+}
+
+.sidebar button:hover {
+  background: var(--accent-color);
+}
+
+.role-badge {
+  background: white;
+  color: var(--primary-color);
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-weight: bold;
+  font-size: 13px;
+  width: fit-content;
+}
+
+/* Hide sidebar when toggled */
+.sidebar-collapsed .sidebar {
+  width: 0;
+  padding: 0;
+  opacity: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.sidebar-open .sidebar {
+  width: 220px;
+  opacity: 1;
+  pointer-events: all;
+}
+
+/* 📄 Main Content */
+.main-content {
+  flex-grow: 1;
+  padding: 24px;
+  background: var(--light-bg);
+  transition: margin-left 0.3s ease-in-out;
+}
+
+.sidebar-collapsed .main-content {
+  padding: 24px;
+}
+
+.sidebar-toggle {
+  background: var(--gray-color);
+  color: white;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 6px;
+  font-size: 13px;
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+
+.sidebar-toggle:hover {
+  background: var(--dark-bg);
+}
+
+/* 🎛️ Table Controls */
+.table-controls {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+
+.table-controls input,
+.table-controls select {
+  padding: 10px;
+  font-size: 13px;
+  border-radius: 6px;
+  border: 1px solid #cbd5e1;
+  flex: 1;
+  min-width: 150px;
+}
+
+.table-controls button {
+  background: var(--accent-color);
+  color: white;
+  padding: 10px 14px;
+  border: none;
+  border-radius: 6px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.table-controls button:hover {
+  opacity: 0.9;
+}
+
+/* 📊 Table */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  font-size: 13.5px;
+  overflow-x: auto;
+}
+
+th,
+td {
+  padding: 12px 16px;
+  border-bottom: 1px solid #e5e7eb;
+  text-align: left;
+  min-width: 100px;
+}
+
+td[contenteditable="true"] {
+  background: #f1f5f9;
+  cursor: text;
+}
+
+td button {
+  background-color: var(--secondary-color);
+  color: white;
+  padding: 6px 10px;
+  border: none;
+  border-radius: 6px;
+  margin-right: 6px;
+  cursor: pointer;
+}
+
+td button:hover {
+  opacity: 0.9;
+}
+
+/* 🛠️ Admin Panel Actions */
+.admin-action-bar {
+  margin-top: 20px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.admin-action-bar button {
+  padding: 10px 16px;
+  font-size: 13px;
+  background: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.admin-action-bar button:hover {
+  background: var(--secondary-color);
+}
+
+/* ⏳ Loader */
+.loader {
+  text-align: center;
+  padding: 20px;
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--gray-color);
+}
+
+/* 📱 Responsive Design */
+@media (max-width: 768px) {
+  .layout {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    min-height: auto;
+  }
+
+  .sidebar-collapsed .sidebar {
+    display: none;
+  }
+
+  .sidebar-toggle {
+    width: 100%;
+    margin-bottom: 16px;
+  }
+
+  .main-content {
+    padding: 16px;
+  }
+
+  .table-controls {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  table th,
+  table td {
+    font-size: 12px;
+    padding: 8px;
+  }
+
+  .admin-action-bar {
+    justify-content: center;
+  }
+}
+/* 🌗 Dark Mode Variables */
+body.dark-mode {
+  --bg: #0a0f24;
+  --text: #e4e4eb;
+  --sidebar-bg: #0d223c;
+  --btn-bg: #1f3a70;
+  --table-bg: #142848;
+}
+
+body.dark-mode {
+  background: var(--bg);
+  color: var(--text);
+}
+
+body.dark-mode .sidebar {
+  background: var(--sidebar-bg);
+}
+
+body.dark-mode .sidebar button,
+body.dark-mode .sidebar-toggle,
+body.dark-mode .table-controls button {
+  background: var(--btn-bg);
+}
+
+body.dark-mode table {
+  background: var(--table-bg);
+  color: var(--text);
+}
+
+body.dark-mode th,
+body.dark-mode td {
+  border-color: #1e3460;
+}
+.smart-assistant {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 999;
+}
+.smart-assistant .toggle {
+  background: var(--primary-color);
+  color: white;
+  padding: 10px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.smart-assistant .chat-box {
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  width: 260px;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  margin-top: 10px;
+}
+.smart-assistant .messages {
+  flex: 1;
+  padding: 10px;
+  overflow-y: auto;
+}
+.smart-assistant .messages .ai {
+  text-align: left;
+  color: #374151;
+}
+.smart-assistant .messages .user {
+  text-align: right;
+  color: #2563eb;
+}
+.smart-assistant .input-area {
+  display: flex;
+  border-top: 1px solid #ccc;
+}
+.smart-assistant .input-area input {
+  flex: 1;
+  padding: 8px;
+  border: none;
+  outline: none;
+}
+.smart-assistant .input-area button {
+  padding: 8px 12px;
+  background: var(--accent-color);
+  color: white;
+  border: none;
+  cursor: pointer;
+}
